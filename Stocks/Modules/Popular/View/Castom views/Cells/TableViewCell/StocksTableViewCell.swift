@@ -11,53 +11,53 @@ class StocksTableViewCell: UITableViewCell {
     
     static let reuseId = "StockCell"
     
-    private var icon: UIImageView {
+    private var icon: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 8
         image.backgroundColor = .black
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
-    }
+    }()
     
-    private var tickerLabel: UILabel {
+    private var tickerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "YNDX"
         return label
-    }
+    }()
     
-    private var nameLabel: UILabel {
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Yandex, LLC"
         return label
-    }
+    }()
     
-    private var favoriteButton: UIButton {
+    private var favoriteButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Star"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
-    }
+    }()
     
-    private var priceLabel: UILabel {
+    private var priceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "4500"
         return label
-    }
+    }()
     
-    private var differenceLabel: UILabel {
+    private var differenceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .green
         label.text = "+$0.12"
         return label
-    }
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -90,6 +90,9 @@ class StocksTableViewCell: UITableViewCell {
         addSubview(differenceLabel)
         differenceLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 0).isActive = true
         differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 12).isActive = true
+        
+        self.widthAnchor.constraint(equalToConstant: 328).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 68).isActive = true
     }
     
     required init?(coder: NSCoder) {
