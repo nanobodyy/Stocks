@@ -1,0 +1,55 @@
+Podfile
+Podfile.lock
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/gurgen.xcuserdatad/xcschemes/Pods-Stocks.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/gurgen.xcuserdatad/xcschemes/Swinject.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/gurgen.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/Swinject/LICENSE
+Pods/Swinject/README.md
+Pods/Swinject/Sources/_Resolver.swift
+Pods/Swinject/Sources/Assembler.swift
+Pods/Swinject/Sources/Assembly.swift
+Pods/Swinject/Sources/Behavior.swift
+Pods/Swinject/Sources/Container.Arguments.swift
+Pods/Swinject/Sources/Container.Logging.swift
+Pods/Swinject/Sources/Container.swift
+Pods/Swinject/Sources/Container.TypeForwarding.swift
+Pods/Swinject/Sources/DebugHelper.swift
+Pods/Swinject/Sources/FunctionType.swift
+Pods/Swinject/Sources/GraphIdentifier.swift
+Pods/Swinject/Sources/InstanceStorage.swift
+Pods/Swinject/Sources/InstanceWrapper.swift
+Pods/Swinject/Sources/ObjectScope.Standard.swift
+Pods/Swinject/Sources/ObjectScope.swift
+Pods/Swinject/Sources/RecursiveLock.swift
+Pods/Swinject/Sources/Resolver.swift
+Pods/Swinject/Sources/ServiceEntry.swift
+Pods/Swinject/Sources/ServiceEntry.TypeForwarding.swift
+Pods/Swinject/Sources/ServiceKey.swift
+Pods/Swinject/Sources/Swinject.h
+Pods/Swinject/Sources/SynchronizedResolver.Arguments.swift
+Pods/Swinject/Sources/SynchronizedResolver.swift
+Pods/Swinject/Sources/UnavailableItems.swift
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-acknowledgements.markdown
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-acknowledgements.plist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-dummy.m
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks.sh
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-Info.plist
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks-umbrella.h
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks.debug.xcconfig
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks.modulemap
+Pods/Target Support Files/Pods-Stocks/Pods-Stocks.release.xcconfig
+Pods/Target Support Files/Swinject/Swinject-dummy.m
+Pods/Target Support Files/Swinject/Swinject-Info.plist
+Pods/Target Support Files/Swinject/Swinject-prefix.pch
+Pods/Target Support Files/Swinject/Swinject-umbrella.h
+Pods/Target Support Files/Swinject/Swinject.debug.xcconfig
+Pods/Target Support Files/Swinject/Swinject.modulemap
+Pods/Target Support Files/Swinject/Swinject.release.xcconfig
+Stocks.xcworkspace/contents.xcworkspacedata
+Stocks.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
