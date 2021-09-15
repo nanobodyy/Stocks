@@ -13,17 +13,14 @@ class PopularIteractor: PopularIteractorProtocol {
     
     let sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","XOM","BAC","WFC","INTC","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","ABBV","BA","KO","CMCSA","MA","PM","DWDP","PEP","ORCL","DIS","MRK","NVDA","MMM","AMGN","IBM","NFLX","WMT"]
     
-    func startFetch(complition: @escaping ([Company]) -> Void) {
+    func startFetch() {
         
-        var modelArray = [Company]()
         
         for ticker in sp500list {
             CompanyProfileService.shared.fetchCompanyProfile(ticker: ticker) { (company) in
-                modelArray.append(company)
+                self.presenter?.fillData(with: company)
             }
         }
-        
-        complition(modelArray)
     }
     
     

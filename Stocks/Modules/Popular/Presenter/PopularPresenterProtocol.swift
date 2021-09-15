@@ -8,5 +8,7 @@
 import Foundation
 
 protocol PopularPresenterProtocol: class {
-    func viewLoad()
+    func viewLoad(compliton: @escaping () -> Void)
+    func fillData(with company: Company)
+    var companies: [Company] { get set }
 }

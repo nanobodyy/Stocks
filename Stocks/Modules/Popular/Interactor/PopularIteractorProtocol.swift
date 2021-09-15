@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PopularIteractorProtocol {
-    func startFetch(complition: @escaping ([Company]) -> Void)
+    func startFetch()
 }

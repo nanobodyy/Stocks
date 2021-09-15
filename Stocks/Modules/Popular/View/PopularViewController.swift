@@ -9,7 +9,7 @@ import UIKit
 
 class PopularViewController: UIViewController, PopularViewControllerProtocol {
     
-    var presenter: PopularPresenter?
+    var presenter: PopularPresenterProtocol?
     
     private lazy var stockList: UITableView = {
         let tableView = UITableView()
@@ -47,6 +47,9 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         super.viewDidLoad()
         configureConstraint()
         view.backgroundColor = .white
+        presenter?.viewLoad(compliton: {
+            self.reloadView()
+        })
     }
     
     func reloadView() {
@@ -59,7 +62,7 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
 extension PopularViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return presenter?.companies.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,11 +72,23 @@ extension PopularViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StocksTableViewCell.reuseId, for: indexPath) as! StocksTableViewCell
         
+        if indexPath.section % 2 == 0 {
+            cell.backgroundColor = .white
+        } else {
+            cell.backgroundColor = .gray
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 8
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
     }
 }
 

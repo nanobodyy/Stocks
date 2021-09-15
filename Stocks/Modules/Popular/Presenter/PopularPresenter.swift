@@ -12,12 +12,15 @@ class PopularPresenter: PopularPresenterProtocol {
     weak var view: PopularViewControllerProtocol?
     var iteractor: PopularIteractorProtocol?
     
-    var companies: (([Company]) -> Void)?
+    var companies = [Company]()
     
-    func viewLoad() {
-        iteractor?.startFetch(complition: { (companiesList) in
-            self.companies?(companiesList)
-        })
+    func viewLoad(compliton: @escaping () -> Void) {
+        iteractor?.startFetch()
+    }
+    
+    func fillData(with company: Company) {
+        companies.append(company)
+        view?.reloadView()
     }
     
 }
