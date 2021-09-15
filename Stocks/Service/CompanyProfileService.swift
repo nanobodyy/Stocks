@@ -9,6 +9,10 @@ import Foundation
 
 class CompanyProfileService {
     
+    static let shared = CompanyProfileService()
+    
+    private init() { }
+    
     func fetchCompanyProfile(ticker: String, complitionHandler: @escaping (Company) -> Void) {
         guard let url = URL(string: "https://finnhub.io/api/v1/stock/profile2?symbol=\(ticker)&token=c1a6egv48v6q19j50nt0") else { return }
         

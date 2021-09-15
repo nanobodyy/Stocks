@@ -62,16 +62,13 @@ class StocksTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.layer.cornerRadius = 16
-        self.clipsToBounds = true
+        self.clipsToBounds = false
         self.backgroundColor = .some(UIColor(named: "AccentColor")!)
         self.configureConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
     }
     
     override func awakeFromNib() {
@@ -82,9 +79,10 @@ class StocksTableViewCell: UITableViewCell {
         contentView.addSubview(icon)
         icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         icon.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        icon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        //icon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         icon.widthAnchor.constraint(equalToConstant: 52).isActive = true
         icon.heightAnchor.constraint(equalToConstant: 52).isActive = true
+        
         contentView.addSubview(tickerLabel)
         tickerLabel.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 12).isActive = true
         tickerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 14).isActive = true

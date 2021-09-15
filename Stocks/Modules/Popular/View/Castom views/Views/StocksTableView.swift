@@ -16,8 +16,8 @@ class StocksTableView: UITableView {
         delegate = self
         dataSource = self
         register(StocksTableViewCell.self, forCellReuseIdentifier: StocksTableViewCell.reuseId)
-        //contentView.
         translatesAutoresizingMaskIntoConstraints = false
+        separatorStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +29,7 @@ class StocksTableView: UITableView {
 extension StocksTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

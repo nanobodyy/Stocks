@@ -3,23 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9992CDA0261D9761006F4E27 /* PrimaryMenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9992CD9F261D9761006F4E27 /* PrimaryMenuCollectionView.swift */; };
 		99A2CFEE2605E3F200FBBEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2CFED2605E3F200FBBEB7 /* AppDelegate.swift */; };
 		99A2CFF02605E3F200FBBEB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2CFEF2605E3F200FBBEB7 /* SceneDelegate.swift */; };
 		99A2CFF72605E3F600FBBEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99A2CFF62605E3F600FBBEB7 /* Assets.xcassets */; };
 		99A2CFFA2605E3F600FBBEB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A2CFF82605E3F600FBBEB7 /* LaunchScreen.storyboard */; };
 		99A2D0072605F55600FBBEB7 /* CompanyProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2D0062605F55600FBBEB7 /* CompanyProfileService.swift */; };
 		99A2D00A2605F99B00FBBEB7 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2D0092605F99B00FBBEB7 /* Company.swift */; };
-		99A2D0102605FDC500FBBEB7 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2D00E2605FDC500FBBEB7 /* PopularViewController.swift */; };
-		99A2D0112605FDC500FBBEB7 /* PopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99A2D00F2605FDC500FBBEB7 /* PopularViewController.xib */; };
 		99CE888E2609E4710059A098 /* StocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE888D2609E4710059A098 /* StocksTableViewCell.swift */; };
-		99CE88952609FE790059A098 /* StocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE88942609FE790059A098 /* StocksCollectionView.swift */; };
+		99CE88952609FE790059A098 /* StocksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE88942609FE790059A098 /* StocksTableView.swift */; };
+		99E90E5C26F1ECE9008E679D /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4A26F1ECE7008E679D /* Montserrat-MediumItalic.ttf */; };
+		99E90E5D26F1ECE9008E679D /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4B26F1ECE8008E679D /* Montserrat-Italic.ttf */; };
+		99E90E5E26F1ECE9008E679D /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4C26F1ECE8008E679D /* Montserrat-ExtraBoldItalic.ttf */; };
+		99E90E5F26F1ECE9008E679D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4D26F1ECE8008E679D /* Montserrat-Regular.ttf */; };
+		99E90E6026F1ECE9008E679D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4E26F1ECE8008E679D /* Montserrat-SemiBold.ttf */; };
+		99E90E6126F1ECE9008E679D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4F26F1ECE8008E679D /* Montserrat-Medium.ttf */; };
+		99E90E6226F1ECE9008E679D /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5026F1ECE8008E679D /* Montserrat-ExtraLight.ttf */; };
+		99E90E6326F1ECE9008E679D /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5126F1ECE8008E679D /* Montserrat-BlackItalic.ttf */; };
+		99E90E6426F1ECE9008E679D /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5226F1ECE9008E679D /* Montserrat-Black.ttf */; };
+		99E90E6526F1ECE9008E679D /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5326F1ECE9008E679D /* Montserrat-ExtraLightItalic.ttf */; };
+		99E90E6626F1ECE9008E679D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5426F1ECE9008E679D /* Montserrat-Bold.ttf */; };
+		99E90E6726F1ECE9008E679D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5526F1ECE9008E679D /* Montserrat-SemiBoldItalic.ttf */; };
+		99E90E6826F1ECE9008E679D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5626F1ECE9008E679D /* Montserrat-ExtraBold.ttf */; };
+		99E90E6926F1ECE9008E679D /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5726F1ECE9008E679D /* Montserrat-BoldItalic.ttf */; };
+		99E90E6A26F1ECE9008E679D /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5826F1ECE9008E679D /* Montserrat-LightItalic.ttf */; };
+		99E90E6B26F1ECE9008E679D /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5926F1ECE9008E679D /* Montserrat-Thin.ttf */; };
+		99E90E6C26F1ECE9008E679D /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5A26F1ECE9008E679D /* Montserrat-ThinItalic.ttf */; };
+		99E90E6D26F1ECE9008E679D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E5B26F1ECE9008E679D /* Montserrat-Light.ttf */; };
+		99E90E7226F1F3DF008E679D /* PopularPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E7126F1F3DF008E679D /* PopularPresenter.swift */; };
+		99E90E7526F1F433008E679D /* PopularViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E7426F1F433008E679D /* PopularViewControllerProtocol.swift */; };
+		99E90E7926F1F5CB008E679D /* PopularPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E7826F1F5CB008E679D /* PopularPresenterProtocol.swift */; };
+		99E90E7C26F1F606008E679D /* PopularIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E7B26F1F606008E679D /* PopularIteractor.swift */; };
+		99E90E7F26F1F623008E679D /* PopularIteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E7E26F1F623008E679D /* PopularIteractorProtocol.swift */; };
+		99E90E8826F20315008E679D /* PopularContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E90E8726F20315008E679D /* PopularContainer.swift */; };
+		99ED355F261D9B82006583B0 /* PopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ED355E261D9B82006583B0 /* PopularViewController.swift */; };
+		99ED3565261D9D16006583B0 /* PrimaryMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ED3564261D9D16006583B0 /* PrimaryMenuCollectionViewCell.swift */; };
+		9BA78BFA7BCAAA26685687CD /* Pods_Stocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D816CEF9AD3F3F9878E2643E /* Pods_Stocks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		247E090A4374D382C4EC7F18 /* Pods-Stocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stocks.debug.xcconfig"; path = "Target Support Files/Pods-Stocks/Pods-Stocks.debug.xcconfig"; sourceTree = "<group>"; };
+		9992CD9F261D9761006F4E27 /* PrimaryMenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMenuCollectionView.swift; sourceTree = "<group>"; };
 		99A2CFEA2605E3F200FBBEB7 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A2CFED2605E3F200FBBEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A2CFEF2605E3F200FBBEB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,10 +56,36 @@
 		99A2CFFB2605E3F600FBBEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99A2D0062605F55600FBBEB7 /* CompanyProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileService.swift; sourceTree = "<group>"; };
 		99A2D0092605F99B00FBBEB7 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		99A2D00E2605FDC500FBBEB7 /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
-		99A2D00F2605FDC500FBBEB7 /* PopularViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularViewController.xib; sourceTree = "<group>"; };
 		99CE888D2609E4710059A098 /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
-		99CE88942609FE790059A098 /* StocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCollectionView.swift; sourceTree = "<group>"; };
+		99CE88942609FE790059A098 /* StocksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableView.swift; sourceTree = "<group>"; };
+		99E90E4A26F1ECE7008E679D /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		99E90E4B26F1ECE8008E679D /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		99E90E4C26F1ECE8008E679D /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		99E90E4D26F1ECE8008E679D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		99E90E4E26F1ECE8008E679D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		99E90E4F26F1ECE8008E679D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		99E90E5026F1ECE8008E679D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		99E90E5126F1ECE8008E679D /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5226F1ECE9008E679D /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		99E90E5326F1ECE9008E679D /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5426F1ECE9008E679D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		99E90E5526F1ECE9008E679D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5626F1ECE9008E679D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		99E90E5726F1ECE9008E679D /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5826F1ECE9008E679D /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5926F1ECE9008E679D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		99E90E5A26F1ECE9008E679D /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		99E90E5B26F1ECE9008E679D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		99E90E7126F1F3DF008E679D /* PopularPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPresenter.swift; sourceTree = "<group>"; };
+		99E90E7426F1F433008E679D /* PopularViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewControllerProtocol.swift; sourceTree = "<group>"; };
+		99E90E7826F1F5CB008E679D /* PopularPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPresenterProtocol.swift; sourceTree = "<group>"; };
+		99E90E7B26F1F606008E679D /* PopularIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIteractor.swift; sourceTree = "<group>"; };
+		99E90E7E26F1F623008E679D /* PopularIteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularIteractorProtocol.swift; sourceTree = "<group>"; };
+		99E90E8726F20315008E679D /* PopularContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularContainer.swift; sourceTree = "<group>"; };
+		99ED355E261D9B82006583B0 /* PopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewController.swift; sourceTree = "<group>"; };
+		99ED3564261D9D16006583B0 /* PrimaryMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		D816CEF9AD3F3F9878E2643E /* Pods_Stocks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stocks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92F7A7E5853612A0683FB9F /* Pods-Stocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stocks.release.xcconfig"; path = "Target Support Files/Pods-Stocks/Pods-Stocks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +93,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA78BFA7BCAAA26685687CD /* Pods_Stocks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5944EA52F4416E7EC87F5CCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				247E090A4374D382C4EC7F18 /* Pods-Stocks.debug.xcconfig */,
+				E92F7A7E5853612A0683FB9F /* Pods-Stocks.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F5822F7FCE66540618E3B82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D816CEF9AD3F3F9878E2643E /* Pods_Stocks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99A2CFE12605E3F200FBBEB7 = {
 			isa = PBXGroup;
 			children = (
 				99A2CFEC2605E3F200FBBEB7 /* Stocks */,
 				99A2CFEB2605E3F200FBBEB7 /* Products */,
+				5944EA52F4416E7EC87F5CCD /* Pods */,
+				8F5822F7FCE66540618E3B82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +138,13 @@
 		99A2CFEC2605E3F200FBBEB7 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
+				99E90E8626F202FF008E679D /* Container */,
+				99A2CFED2605E3F200FBBEB7 /* AppDelegate.swift */,
+				99A2CFEF2605E3F200FBBEB7 /* SceneDelegate.swift */,
 				99A2D0042605E4CB00FBBEB7 /* Service */,
 				99A2D0052605E4DE00FBBEB7 /* Entities */,
 				99A2D00C2605FD8100FBBEB7 /* Modules */,
-				99A2CFED2605E3F200FBBEB7 /* AppDelegate.swift */,
-				99A2CFEF2605E3F200FBBEB7 /* SceneDelegate.swift */,
+				99E90E4926F1EBA6008E679D /* Fonts */,
 				99A2CFF62605E3F600FBBEB7 /* Assets.xcassets */,
 				99A2CFF82605E3F600FBBEB7 /* LaunchScreen.storyboard */,
 				99A2CFFB2605E3F600FBBEB7 /* Info.plist */,
@@ -114,8 +190,8 @@
 		99A2D0142605FEE100FBBEB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				99A2D00E2605FDC500FBBEB7 /* PopularViewController.swift */,
-				99A2D00F2605FDC500FBBEB7 /* PopularViewController.xib */,
+				99ED355E261D9B82006583B0 /* PopularViewController.swift */,
+				99E90E7426F1F433008E679D /* PopularViewControllerProtocol.swift */,
 				99A2D0192606032D00FBBEB7 /* Castom views */,
 			);
 			path = View;
@@ -124,6 +200,8 @@
 		99A2D0152605FF5300FBBEB7 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				99E90E7126F1F3DF008E679D /* PopularPresenter.swift */,
+				99E90E7826F1F5CB008E679D /* PopularPresenterProtocol.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -131,6 +209,8 @@
 		99A2D0162605FF5A00FBBEB7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				99E90E7B26F1F606008E679D /* PopularIteractor.swift */,
+				99E90E7E26F1F623008E679D /* PopularIteractorProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -154,6 +234,7 @@
 		99CE88912609FE220059A098 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				99ED3563261D9CE4006583B0 /* ColllectionViewCell */,
 				99CE88922609FE3F0059A098 /* TableViewCell */,
 			);
 			path = Cells;
@@ -170,9 +251,51 @@
 		99CE88932609FE4F0059A098 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				99CE88942609FE790059A098 /* StocksCollectionView.swift */,
+				99CE88942609FE790059A098 /* StocksTableView.swift */,
+				9992CD9F261D9761006F4E27 /* PrimaryMenuCollectionView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		99E90E4926F1EBA6008E679D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				99E90E5226F1ECE9008E679D /* Montserrat-Black.ttf */,
+				99E90E5126F1ECE8008E679D /* Montserrat-BlackItalic.ttf */,
+				99E90E5426F1ECE9008E679D /* Montserrat-Bold.ttf */,
+				99E90E5726F1ECE9008E679D /* Montserrat-BoldItalic.ttf */,
+				99E90E5626F1ECE9008E679D /* Montserrat-ExtraBold.ttf */,
+				99E90E4C26F1ECE8008E679D /* Montserrat-ExtraBoldItalic.ttf */,
+				99E90E5026F1ECE8008E679D /* Montserrat-ExtraLight.ttf */,
+				99E90E5326F1ECE9008E679D /* Montserrat-ExtraLightItalic.ttf */,
+				99E90E4B26F1ECE8008E679D /* Montserrat-Italic.ttf */,
+				99E90E5B26F1ECE9008E679D /* Montserrat-Light.ttf */,
+				99E90E5826F1ECE9008E679D /* Montserrat-LightItalic.ttf */,
+				99E90E4F26F1ECE8008E679D /* Montserrat-Medium.ttf */,
+				99E90E4A26F1ECE7008E679D /* Montserrat-MediumItalic.ttf */,
+				99E90E4D26F1ECE8008E679D /* Montserrat-Regular.ttf */,
+				99E90E4E26F1ECE8008E679D /* Montserrat-SemiBold.ttf */,
+				99E90E5526F1ECE9008E679D /* Montserrat-SemiBoldItalic.ttf */,
+				99E90E5926F1ECE9008E679D /* Montserrat-Thin.ttf */,
+				99E90E5A26F1ECE9008E679D /* Montserrat-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		99E90E8626F202FF008E679D /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				99E90E8726F20315008E679D /* PopularContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		99ED3563261D9CE4006583B0 /* ColllectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				99ED3564261D9D16006583B0 /* PrimaryMenuCollectionViewCell.swift */,
+			);
+			path = ColllectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99A2CFFE2605E3F600FBBEB7 /* Build configuration list for PBXNativeTarget "Stocks" */;
 			buildPhases = (
+				E316FF1E71EDE903AB712E95 /* [CP] Check Pods Manifest.lock */,
 				99A2CFE62605E3F200FBBEB7 /* Sources */,
 				99A2CFE72605E3F200FBBEB7 /* Frameworks */,
 				99A2CFE82605E3F200FBBEB7 /* Resources */,
+				F1F637D4DBFBBA64225465E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,25 +357,92 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E90E6D26F1ECE9008E679D /* Montserrat-Light.ttf in Resources */,
+				99E90E6726F1ECE9008E679D /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				99E90E5F26F1ECE9008E679D /* Montserrat-Regular.ttf in Resources */,
 				99A2CFFA2605E3F600FBBEB7 /* LaunchScreen.storyboard in Resources */,
-				99A2D0112605FDC500FBBEB7 /* PopularViewController.xib in Resources */,
+				99E90E5C26F1ECE9008E679D /* Montserrat-MediumItalic.ttf in Resources */,
+				99E90E6326F1ECE9008E679D /* Montserrat-BlackItalic.ttf in Resources */,
+				99E90E6626F1ECE9008E679D /* Montserrat-Bold.ttf in Resources */,
+				99E90E6026F1ECE9008E679D /* Montserrat-SemiBold.ttf in Resources */,
+				99E90E6526F1ECE9008E679D /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				99E90E6926F1ECE9008E679D /* Montserrat-BoldItalic.ttf in Resources */,
+				99E90E6226F1ECE9008E679D /* Montserrat-ExtraLight.ttf in Resources */,
+				99E90E6C26F1ECE9008E679D /* Montserrat-ThinItalic.ttf in Resources */,
+				99E90E6B26F1ECE9008E679D /* Montserrat-Thin.ttf in Resources */,
+				99E90E5E26F1ECE9008E679D /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				99E90E6826F1ECE9008E679D /* Montserrat-ExtraBold.ttf in Resources */,
+				99E90E6426F1ECE9008E679D /* Montserrat-Black.ttf in Resources */,
+				99E90E6A26F1ECE9008E679D /* Montserrat-LightItalic.ttf in Resources */,
 				99A2CFF72605E3F600FBBEB7 /* Assets.xcassets in Resources */,
+				99E90E6126F1ECE9008E679D /* Montserrat-Medium.ttf in Resources */,
+				99E90E5D26F1ECE9008E679D /* Montserrat-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E316FF1E71EDE903AB712E95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Stocks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1F637D4DBFBBA64225465E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stocks/Pods-Stocks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99A2CFE62605E3F200FBBEB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99ED355F261D9B82006583B0 /* PopularViewController.swift in Sources */,
 				99A2D0072605F55600FBBEB7 /* CompanyProfileService.swift in Sources */,
-				99A2D0102605FDC500FBBEB7 /* PopularViewController.swift in Sources */,
+				9992CDA0261D9761006F4E27 /* PrimaryMenuCollectionView.swift in Sources */,
+				99E90E7C26F1F606008E679D /* PopularIteractor.swift in Sources */,
+				99ED3565261D9D16006583B0 /* PrimaryMenuCollectionViewCell.swift in Sources */,
+				99E90E7526F1F433008E679D /* PopularViewControllerProtocol.swift in Sources */,
 				99CE888E2609E4710059A098 /* StocksTableViewCell.swift in Sources */,
 				99A2CFEE2605E3F200FBBEB7 /* AppDelegate.swift in Sources */,
-				99CE88952609FE790059A098 /* StocksCollectionView.swift in Sources */,
+				99E90E7226F1F3DF008E679D /* PopularPresenter.swift in Sources */,
+				99E90E7F26F1F623008E679D /* PopularIteractorProtocol.swift in Sources */,
+				99CE88952609FE790059A098 /* StocksTableView.swift in Sources */,
+				99E90E8826F20315008E679D /* PopularContainer.swift in Sources */,
 				99A2CFF02605E3F200FBBEB7 /* SceneDelegate.swift in Sources */,
+				99E90E7926F1F5CB008E679D /* PopularPresenterProtocol.swift in Sources */,
 				99A2D00A2605F99B00FBBEB7 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +579,7 @@
 		};
 		99A2CFFF2605E3F600FBBEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247E090A4374D382C4EC7F18 /* Pods-Stocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +599,7 @@
 		};
 		99A2D0002605E3F600FBBEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92F7A7E5853612A0683FB9F /* Pods-Stocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
