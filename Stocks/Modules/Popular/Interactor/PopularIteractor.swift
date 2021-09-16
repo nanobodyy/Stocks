@@ -10,18 +10,17 @@ import Foundation
 class PopularIteractor: PopularIteractorProtocol {
     
     weak var presenter: PopularPresenterProtocol?
+    let networkService = CompanyProfileService()
     
-    let sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","XOM","BAC","WFC","INTC","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","ABBV","BA","KO","CMCSA","MA","PM","DWDP","PEP","ORCL","DIS","MRK","NVDA","MMM","AMGN","IBM","NFLX","WMT"]
+    var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","XOM","BAC","WFC","INTC","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","ABBV","BA","KO","CMCSA","MA","PM","DWDP","PEP","ORCL","DIS","MRK","NVDA","MMM","AMGN","IBM","NFLX","WMT"]
     
     func startFetch() {
         
-        
         for ticker in sp500list {
-            CompanyProfileService.shared.response(ticker: ticker) { (company: Company) in
-                self.presenter?.fillData(with: company)
+            networkService.response(ticker: ticker) {[weak self] (stocks) in
+                self?.presenter?.fillData(with: stocks)
+                guard let ticker = stocks.companyProfile?.ticker else { return }
             }
         }
     }
-    
-    
 }

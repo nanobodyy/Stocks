@@ -10,6 +10,7 @@ import UIKit
 class PopularViewController: UIViewController, PopularViewControllerProtocol {
     
     var presenter: PopularPresenterProtocol?
+    let networkService = CompanyProfileService()
     
     private lazy var stockList: UITableView = {
         let tableView = UITableView()
@@ -48,6 +49,9 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         configureConstraint()
         view.backgroundColor = .white
         presenter?.viewLoad()
+        networkService.response(ticker: "AAPl") { (qoute) in
+            print(qoute)
+        }
     }
     
     func reloadView() {
@@ -76,6 +80,8 @@ extension PopularViewController: UITableViewDataSource {
             cell.backgroundColor = UIColor(red: 241/255, green: 244/255, blue: 247/255, alpha: 1.0)
         }
         
+        cell.configureUI(with: presenter!, indexPath: indexPath)
+        
         return cell
     }
     
@@ -93,4 +99,3 @@ extension PopularViewController: UITableViewDataSource {
 extension PopularViewController: UITableViewDelegate {
     
 }
-

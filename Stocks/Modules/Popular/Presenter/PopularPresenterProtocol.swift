@@ -9,6 +9,6 @@ import Foundation
 
 protocol PopularPresenterProtocol: class {
     func viewLoad()
-    func fillData(with company: Company)
-    var companies: [Company] { get set }
+    func fillData(with company: Stocks)
+    var companies: [Stocks] { get set }
 }

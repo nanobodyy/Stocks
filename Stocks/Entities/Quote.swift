@@ -8,7 +8,11 @@
 import Foundation
 
 struct Quote: Codable {
-    let c: Double // current price
-    let d: Double // change
-    let dp: Double // percent change
+    var c: Double? // current price
+    var d: Double? // change
+    var dp: Double? // percent change
+    var l: Double? 
+    var o: Double?
+    var pc: Double?
+    var t: Double?
 }
