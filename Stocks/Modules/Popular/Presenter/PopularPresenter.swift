@@ -14,12 +14,13 @@ class PopularPresenter: PopularPresenterProtocol {
     
     var companies = [Company]()
     
-    func viewLoad(compliton: @escaping () -> Void) {
+    func viewLoad() {
         iteractor?.startFetch()
     }
     
     func fillData(with company: Company) {
         companies.append(company)
+        //print(company)
         view?.reloadView()
     }
     

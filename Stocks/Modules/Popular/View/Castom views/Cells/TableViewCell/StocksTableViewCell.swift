@@ -107,5 +107,11 @@ class StocksTableViewCell: UITableViewCell {
         
         contentView.heightAnchor.constraint(equalToConstant: 68).isActive = true
     }
+    
+    func configureUI(with presenter: PopularPresenter, indexPath: IndexPath) {
+        self.nameLabel.text = presenter.companies[indexPath.section].name
+        self.tickerLabel.text = presenter.companies[indexPath.section].ticker
+        
+    }
 
 }

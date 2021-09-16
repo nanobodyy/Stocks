@@ -17,7 +17,7 @@ class PopularIteractor: PopularIteractorProtocol {
         
         
         for ticker in sp500list {
-            CompanyProfileService.shared.fetchCompanyProfile(ticker: ticker) { (company) in
+            CompanyProfileService.shared.response(ticker: ticker) { (company: Company) in
                 self.presenter?.fillData(with: company)
             }
         }

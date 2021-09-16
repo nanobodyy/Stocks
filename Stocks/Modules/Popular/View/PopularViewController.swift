@@ -47,9 +47,7 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         super.viewDidLoad()
         configureConstraint()
         view.backgroundColor = .white
-        presenter?.viewLoad(compliton: {
-            self.reloadView()
-        })
+        presenter?.viewLoad()
     }
     
     func reloadView() {
@@ -75,7 +73,7 @@ extension PopularViewController: UITableViewDataSource {
         if indexPath.section % 2 == 0 {
             cell.backgroundColor = .white
         } else {
-            cell.backgroundColor = .gray
+            cell.backgroundColor = UIColor(red: 241/255, green: 244/255, blue: 247/255, alpha: 1.0)
         }
         
         return cell

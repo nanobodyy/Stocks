@@ -13,7 +13,7 @@ class CompanyProfileService {
     
     private init() { }
     
-    func fetchCompanyProfile(ticker: String, complitionHandler: @escaping (Company) -> Void) {
+    func response<T:Codable>(ticker: String, complitionHandler: @escaping (T) -> Void) {
         guard let url = URL(string: "https://finnhub.io/api/v1/stock/profile2?symbol=\(ticker)&token=c1a6egv48v6q19j50nt0") else { return }
         
         let requst = URLRequest(url: url)
@@ -23,23 +23,28 @@ class CompanyProfileService {
                 return
             }
             
-            if let company = self.pardeJSON(withData: data) {
+            if let company = T.from(data) {
                 complitionHandler(company)
             }
         }
         task.resume()
     }
     
-    func pardeJSON(withData data: Data) -> Company? {
-        let decoder = JSONDecoder()
+    func fetchCurrentPrice(ticker: String) {
+        guard let url = URL(string: "https://finnhub.io/api/v1/quote?symbol=\(ticker)&token=\(apiKey)") else { return}
         
-        do {
-            let company = try decoder.decode(Company.self, from: data)
-            return company
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        
-        return nil
     }
+    
+//    func parseJSON<T:Codable>(withData data: Data) -> T? {
+//        let decoder = JSONDecoder()
+//
+//        do {
+//            let company = try decoder.decode(Company.self, from: data)
+//            return company
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+//
+//        return nil
+//    }
 }
