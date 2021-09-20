@@ -5,7 +5,7 @@
 //  Created by Гурген on 20.03.2021.
 //
 
-import Foundation
+import UIKit
 
 class CompanyProfileService {
     
@@ -19,6 +19,7 @@ class CompanyProfileService {
                 print(String(describing: error))
                 return
             }
+            //print(String(describing: repsonse))
             complitionHandler(self.parse(with: data))
         }
         task.resume()
@@ -34,5 +35,20 @@ class CompanyProfileService {
             print(error.localizedDescription)
             return nil
         }
+    }
+    
+    func loadImage(with url: String, complitionHandler:@escaping (Data) -> Void) {
+        guard let url = URL(string: url) else { return }
+        
+        let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                print(String(describing: error))
+                return
+            }
+            
+            //guard let image = UIImage(data: data) else { return }
+            complitionHandler(data)
+        }
+        session.resume()
     }
 }

@@ -15,7 +15,6 @@
 		99A2D0072605F55600FBBEB7 /* CompanyProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2D0062605F55600FBBEB7 /* CompanyProfileService.swift */; };
 		99A2D00A2605F99B00FBBEB7 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A2D0092605F99B00FBBEB7 /* Company.swift */; };
 		99CE888E2609E4710059A098 /* StocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE888D2609E4710059A098 /* StocksTableViewCell.swift */; };
-		99CE88952609FE790059A098 /* StocksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE88942609FE790059A098 /* StocksTableView.swift */; };
 		99E90E5C26F1ECE9008E679D /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4A26F1ECE7008E679D /* Montserrat-MediumItalic.ttf */; };
 		99E90E5D26F1ECE9008E679D /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4B26F1ECE8008E679D /* Montserrat-Italic.ttf */; };
 		99E90E5E26F1ECE9008E679D /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99E90E4C26F1ECE8008E679D /* Montserrat-ExtraBoldItalic.ttf */; };
@@ -61,7 +60,6 @@
 		99A2D0062605F55600FBBEB7 /* CompanyProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileService.swift; sourceTree = "<group>"; };
 		99A2D0092605F99B00FBBEB7 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		99CE888D2609E4710059A098 /* StocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableViewCell.swift; sourceTree = "<group>"; };
-		99CE88942609FE790059A098 /* StocksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableView.swift; sourceTree = "<group>"; };
 		99E90E4A26F1ECE7008E679D /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
 		99E90E4B26F1ECE8008E679D /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		99E90E4C26F1ECE8008E679D /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 		99CE88932609FE4F0059A098 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				99CE88942609FE790059A098 /* StocksTableView.swift */,
 				9992CD9F261D9761006F4E27 /* PrimaryMenuCollectionView.swift */,
 			);
 			path = Views;
@@ -463,7 +460,6 @@
 				99A2CFEE2605E3F200FBBEB7 /* AppDelegate.swift in Sources */,
 				99E90E7226F1F3DF008E679D /* PopularPresenter.swift in Sources */,
 				99E90E7F26F1F623008E679D /* PopularIteractorProtocol.swift in Sources */,
-				99CE88952609FE790059A098 /* StocksTableView.swift in Sources */,
 				99E90E8826F20315008E679D /* PopularContainer.swift in Sources */,
 				99A2CFF02605E3F200FBBEB7 /* SceneDelegate.swift in Sources */,
 				99E90E7926F1F5CB008E679D /* PopularPresenterProtocol.swift in Sources */,

@@ -24,7 +24,6 @@ class StocksTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "YNDX"
         return label
     }()
     
@@ -32,7 +31,6 @@ class StocksTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Yandex, LLC"
         return label
     }()
     
@@ -47,7 +45,6 @@ class StocksTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "4500 $"
         return label
     }()
     
@@ -56,7 +53,6 @@ class StocksTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGreen
-        label.text = "+$0.12"
         return label
     }()
     
@@ -80,7 +76,6 @@ class StocksTableViewCell: UITableViewCell {
         contentView.addSubview(icon)
         icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
         icon.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        //icon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         icon.widthAnchor.constraint(equalToConstant: 52).isActive = true
         icon.heightAnchor.constraint(equalToConstant: 52).isActive = true
         
@@ -110,30 +105,19 @@ class StocksTableViewCell: UITableViewCell {
     }
     
     func configureUI(with presenter: PopularPresenterProtocol, indexPath: IndexPath) {
-        self.nameLabel.text = presenter.companies[indexPath.section].companyProfile?.name
-        self.tickerLabel.text = presenter.companies[indexPath.section].companyProfile?.ticker
-        guard let price = presenter.companies[indexPath.section].qoute?.c else {
-            return
-        }
-        self.priceLabel.text = "\(price)$"
-        
-//        guard let logoUrl = presenter.companies[indexPath.section].companyProfile?.logo else { return }
-//
-//        icon.kf.setImage(with: URL(string: logoUrl))
-        
-        
-        
-        guard let dayChange = presenter.companies[indexPath.section].qoute?.d  else {
-            return
-        }
-        
-        if dayChange >= 0 {
-            self.differenceLabel.text = "$\(dayChange)"
+        nameLabel.text = presenter.getName(for: indexPath)
+        tickerLabel.text = presenter.getTicker(for: indexPath)
+        priceLabel.text = "\(presenter.getPrice(for: indexPath))$"
+        icon.kf.setImage(with: URL(string: presenter.getImageData(for: indexPath)))
+
+        if presenter.getDayChange(for: indexPath) > 0.0 {
+            differenceLabel.text = "$\(presenter.getDayChange(for: indexPath))"
+            differenceLabel.textColor = .systemGreen
         } else {
-            self.differenceLabel.textColor = .red
-            self.differenceLabel.text = "$\(dayChange)"
+            differenceLabel.text = "$\(presenter.getDayChange(for: indexPath))"
+            differenceLabel.textColor = .systemRed
         }
+        
     }
     
-
 }

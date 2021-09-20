@@ -60,7 +60,7 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
 extension PopularViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return presenter?.companies.count ?? 1
+        return presenter?.getItemCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
