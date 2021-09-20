@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class StocksTableViewCell: UITableViewCell {
     
@@ -54,7 +55,7 @@ class StocksTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .green
+        label.textColor = .systemGreen
         label.text = "+$0.12"
         return label
     }()
@@ -115,6 +116,23 @@ class StocksTableViewCell: UITableViewCell {
             return
         }
         self.priceLabel.text = "\(price)$"
+        
+//        guard let logoUrl = presenter.companies[indexPath.section].companyProfile?.logo else { return }
+//
+//        icon.kf.setImage(with: URL(string: logoUrl))
+        
+        
+        
+        guard let dayChange = presenter.companies[indexPath.section].qoute?.d  else {
+            return
+        }
+        
+        if dayChange >= 0 {
+            self.differenceLabel.text = "$\(dayChange)"
+        } else {
+            self.differenceLabel.textColor = .red
+            self.differenceLabel.text = "$\(dayChange)"
+        }
     }
     
 

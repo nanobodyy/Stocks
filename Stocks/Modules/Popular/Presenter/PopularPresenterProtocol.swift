@@ -5,7 +5,7 @@
 //  Created by Гурген on 15.09.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol PopularPresenterProtocol: class {
     func viewLoad()

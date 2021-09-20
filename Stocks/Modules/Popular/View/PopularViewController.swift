@@ -10,8 +10,7 @@ import UIKit
 class PopularViewController: UIViewController, PopularViewControllerProtocol {
     
     var presenter: PopularPresenterProtocol?
-    let networkService = CompanyProfileService()
-    
+   
     private lazy var stockList: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -49,9 +48,6 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         configureConstraint()
         view.backgroundColor = .white
         presenter?.viewLoad()
-        networkService.response(ticker: "AAPl") { (qoute) in
-            print(qoute)
-        }
     }
     
     func reloadView() {

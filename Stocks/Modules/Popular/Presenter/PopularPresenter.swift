@@ -5,7 +5,8 @@
 //  Created by Гурген on 15.09.2021.
 //
 
-import Foundation
+import UIKit
+import Kingfisher
 
 
 class PopularPresenter: PopularPresenterProtocol {
