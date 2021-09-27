@@ -8,9 +8,16 @@
 import UIKit
 import Kingfisher
 
+protocol TapFavoriteProtocol {
+    func didTap()
+}
+
 class StocksTableViewCell: UITableViewCell {
-    
+
     static let reuseId = "StockCell"
+    var delegat: TapFavoriteProtocol?
+    
+    var isFavorite: Bool = false
     
     private var icon: UIImageView = {
         let image = UIImageView()
@@ -34,10 +41,11 @@ class StocksTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var favoriteButton: UIButton = {
+    private lazy var favoriteButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Star"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
     }()
     
@@ -118,6 +126,12 @@ class StocksTableViewCell: UITableViewCell {
             differenceLabel.textColor = .systemRed
         }
         
+    }
+    
+    @objc func buttonAction() {
+        if favoriteButton.imageView?.image == UIImage(named: "Star") {
+            favoriteButton.setImage(UIImage(named: "Selected"), for: .normal)
+        }
     }
     
 }

@@ -11,6 +11,7 @@ protocol PopularPresenterProtocol: class {
     func viewLoad()
     func fillData(with company: Stocks)
     var companies: [Stocks] { get set }
+    var menuItem: [String] { get }
     
     func getTicker(for indexPath: IndexPath) -> String
     func getName(for indexPath: IndexPath) -> String

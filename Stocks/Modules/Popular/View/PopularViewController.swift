@@ -21,12 +21,14 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         return tableView
     }()
     
-    private var menu: UICollectionView = {
-        let collectionView = PrimaryMenuCollectionView()
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
-        return collectionView
-    }()
+    let menu = MenuStack()
+    
+//    private var menu: UICollectionView = {
+//        let collectionView = PrimaryMenuCollectionView()
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.backgroundColor = .white
+//        return collectionView
+//    }()
     
     private func configureConstraint() {
         view.addSubview(menu)
@@ -38,16 +40,18 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         view.addSubview(stockList)
         stockList.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         stockList.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
-        stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: 8).isActive = true
+        stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: -8).isActive = true
         stockList.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //menu.configure(with: presenter!.menuItem)
         configureConstraint()
         view.backgroundColor = .white
         presenter?.viewLoad()
+        menu.configure(with: presenter!.menuItem)
     }
     
     func reloadView() {

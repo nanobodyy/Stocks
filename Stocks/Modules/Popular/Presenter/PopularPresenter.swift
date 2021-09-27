@@ -14,6 +14,7 @@ class PopularPresenter: PopularPresenterProtocol {
     var iteractor: PopularIteractorProtocol?
     
     var companies = [Stocks]()
+    var menuItem = ["Popular", "Favorite"]
     
     func viewLoad() {
         iteractor?.startFetch()

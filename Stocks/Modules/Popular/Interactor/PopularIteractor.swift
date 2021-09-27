@@ -6,21 +6,26 @@
 //
 
 import Foundation
-import Kingfisher
+import CoreData
 
 class PopularIteractor: PopularIteractorProtocol {
     
-    
+    var context: NSManagedObjectContext!
     
     weak var presenter: PopularPresenterProtocol?
     let networkService = CompanyProfileService()
+    let dataService = DataService()
     
-    var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","NFLX","ORCL","C","MA","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","NVDA"]
-    
+//    var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","NFLX","ORCL","C","MA","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","NVDA"]
+//
     func startFetch() {
         
-        for ticker in sp500list {
-            networkService.response(url: "https://finnhub.io/api/v1/stock/profile2?symbol=\(ticker)&token=c1a6egv48v6q19j50nt0") { (company: Company?) in
+        dataService.fetchData()
+        
+        
+        for tickerModel in dataService.tickers {
+            
+            networkService.response(url: "https://finnhub.io/api/v1/stock/profile2?symbol=\(tickerModel.ticker!)&token=c1a6egv48v6q19j50nt0") { (company: Company?) in
                 
                 var stocks = Stocks(companyProfile: nil, qoute: nil, isFavorite: false)
                 stocks.companyProfile = company
