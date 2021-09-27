@@ -9,15 +9,14 @@ import UIKit
 import Kingfisher
 
 protocol TapFavoriteProtocol {
-    func didTap()
+    func didTap(bool: Bool, name: String)
 }
 
 class StocksTableViewCell: UITableViewCell {
 
     static let reuseId = "StockCell"
-    var delegat: TapFavoriteProtocol?
-    
-    var isFavorite: Bool = false
+    var delegate: TapFavoriteProtocol?
+    var isFavorite: Bool?
     
     private var icon: UIImageView = {
         let image = UIImageView()
@@ -41,9 +40,9 @@ class StocksTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var favoriteButton: UIButton = {
+    private lazy  var favoriteButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "Star"), for: .normal)
+        //button.setImage(UIImage(named: "Star"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
@@ -116,7 +115,10 @@ class StocksTableViewCell: UITableViewCell {
         nameLabel.text = presenter.getName(for: indexPath)
         tickerLabel.text = presenter.getTicker(for: indexPath)
         priceLabel.text = "\(presenter.getPrice(for: indexPath))$"
+        buttonSelected(bool: presenter.getIsFavorite(for: indexPath))
+        isFavorite = presenter.getIsFavorite(for: indexPath)
         icon.kf.setImage(with: URL(string: presenter.getImageData(for: indexPath)))
+        
 
         if presenter.getDayChange(for: indexPath) > 0.0 {
             differenceLabel.text = "$\(presenter.getDayChange(for: indexPath))"
@@ -129,9 +131,22 @@ class StocksTableViewCell: UITableViewCell {
     }
     
     @objc func buttonAction() {
-        if favoriteButton.imageView?.image == UIImage(named: "Star") {
-            favoriteButton.setImage(UIImage(named: "Selected"), for: .normal)
+        if isSelected {
+            buttonSelected(bool: !isSelected)
+            isSelected = !isSelected
+            delegate?.didTap(bool: false, name: tickerLabel.text!)
+        } else {
+            buttonSelected(bool: !isSelected)
+            isSelected = !isSelected
+            delegate?.didTap(bool: true, name: tickerLabel.text!)
         }
     }
     
+    func buttonSelected(bool: Bool) {
+        if bool {
+            favoriteButton.setImage(UIImage(named: "Selected"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "Star"), for: .normal)
+        }
+    }
 }

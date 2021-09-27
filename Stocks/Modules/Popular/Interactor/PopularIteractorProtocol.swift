@@ -10,4 +10,5 @@ import Foundation
 protocol PopularIteractorProtocol {
     func startFetch()
     func fetchImage(with url: String, complitionHandler: @escaping (Data) -> Void)
+    func changeEntity(with ticker: String, isFavorite: Bool)
 }

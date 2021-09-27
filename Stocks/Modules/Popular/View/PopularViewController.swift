@@ -80,6 +80,7 @@ extension PopularViewController: UITableViewDataSource {
             cell.backgroundColor = UIColor(red: 241/255, green: 244/255, blue: 247/255, alpha: 1.0)
         }
         
+        cell.delegate = self
         cell.configureUI(with: presenter!, indexPath: indexPath)
         
         return cell
@@ -98,4 +99,11 @@ extension PopularViewController: UITableViewDataSource {
 
 extension PopularViewController: UITableViewDelegate {
     
+}
+
+extension PopularViewController: TapFavoriteProtocol {
+    func didTap(bool: Bool, name: String) {
+        presenter?.starDidTap(bool: bool, ticker: name)
+        
+    }
 }

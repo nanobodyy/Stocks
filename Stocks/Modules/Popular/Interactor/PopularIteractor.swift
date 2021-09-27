@@ -27,7 +27,7 @@ class PopularIteractor: PopularIteractorProtocol {
             
             networkService.response(url: "https://finnhub.io/api/v1/stock/profile2?symbol=\(tickerModel.ticker!)&token=c1a6egv48v6q19j50nt0") { (company: Company?) in
                 
-                var stocks = Stocks(companyProfile: nil, qoute: nil, isFavorite: false)
+                var stocks = Stocks(companyProfile: nil, qoute: nil, isFavorite: tickerModel.isFavorite)
                 stocks.companyProfile = company
                 
                 guard let tick = stocks.companyProfile?.ticker else { return }
@@ -47,6 +47,10 @@ class PopularIteractor: PopularIteractorProtocol {
         networkService.loadImage(with: url) { (data) in
             complitionHandler(data)
         }
+    }
+    
+    func changeEntity(with ticker: String, isFavorite: Bool) {
+        dataService.changeEntity(tickerString: ticker, isFavorite: isFavorite)
     }
 }
 

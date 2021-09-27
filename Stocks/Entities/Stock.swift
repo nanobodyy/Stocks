@@ -11,5 +11,5 @@ struct Stocks {
     var companyProfile: Company?
     var qoute: Quote?
     
-    var isFavorite = false
+    var isFavorite: Bool?
 }
