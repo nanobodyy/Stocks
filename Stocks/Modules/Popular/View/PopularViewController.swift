@@ -81,7 +81,8 @@ extension PopularViewController: UITableViewDataSource {
         }
         
         cell.delegate = self
-        cell.configureUI(with: presenter!, indexPath: indexPath)
+        cell.indexPath = indexPath
+        cell.configureUI(with: presenter!)
         
         return cell
     }
@@ -102,8 +103,7 @@ extension PopularViewController: UITableViewDelegate {
 }
 
 extension PopularViewController: TapFavoriteProtocol {
-    func didTap(bool: Bool, name: String) {
-        presenter?.starDidTap(bool: bool, ticker: name)
-        
+    func didTap(bool: Bool, name: String, indexPath: IndexPath) {
+        presenter?.changeFavorite(bool: bool, ticker: name, indexPath: indexPath)
     }
 }

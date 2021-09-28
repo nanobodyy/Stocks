@@ -60,14 +60,10 @@ class PopularPresenter: PopularPresenterProtocol {
         return companies[indexPath.section].isFavorite ?? false
     }
     
-    func starDidTap(bool: Bool, ticker: String) {
+    func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath) {
         iteractor?.changeEntity(with: ticker, isFavorite: bool)
         
-        for var i in companies {
-            if i.companyProfile?.ticker == ticker {
-                i.isFavorite = bool
-            }
-        }
+        companies[indexPath.section].isFavorite = bool
     }
     
     

@@ -21,6 +21,6 @@ protocol PopularPresenterProtocol: class {
     func getImageData(for indexPath: IndexPath) -> String
     func getIsFavorite(for indexPath: IndexPath) -> Bool
     
-    func starDidTap(bool: Bool, ticker: String)
+    func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath)
     
 }
