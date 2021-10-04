@@ -18,12 +18,18 @@ class PopularPresenter: PopularPresenterProtocol {
     
     func viewLoad() {
         iteractor?.startFetch()
-        print(1)
+        view?.startActivityIndictor()
     }
     
     func fillData(with company: Stocks) {
         companies.append(company)
-        //print(company)
+        self.companies = companies.sorted { (stock1, stock2) -> Bool in
+            (stock1.companyProfile?.ticker)! < (stock2.companyProfile?.ticker)!
+        }
+    }
+    
+    func didFill() {
+        view?.stopActivityIndictor()
         view?.reloadView()
     }
     

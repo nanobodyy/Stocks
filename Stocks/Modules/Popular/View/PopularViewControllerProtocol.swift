@@ -9,4 +9,6 @@ import Foundation
 
 protocol PopularViewControllerProtocol: class {
     func reloadView()
+    func startActivityIndictor()
+    func stopActivityIndictor()
 }

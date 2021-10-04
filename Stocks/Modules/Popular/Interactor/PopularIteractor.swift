@@ -37,10 +37,14 @@ class PopularIteractor: PopularIteractorProtocol {
                     stocks.qoute = quote
                     
                     self.presenter?.fillData(with: stocks)
+                    
+                    if tickerModel == self.dataService.tickers.last {
+                        self.presenter?.didFill()
+                    }
+
                 }
             }
         }
-        
     }
     
     func fetchImage(with url: String, complitionHandler: @escaping (Data) -> Void) {

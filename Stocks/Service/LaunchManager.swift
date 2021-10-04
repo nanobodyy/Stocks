@@ -12,7 +12,7 @@ class LaunchManager {
     
     let dataService = DataService()
     
-    private var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","NFLX","ORCL","C","MA","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","NVDA"]
+    private var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","NFLX","ORCL","TSLA","INTC","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","NVDA"]
     
     private let defaults = UserDefaults.standard
     

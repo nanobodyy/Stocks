@@ -127,13 +127,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		998D53F72701D61B00B35002 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
 		99A2CFE12605E3F200FBBEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +152,6 @@
 				99E90E8626F202FF008E679D /* Container */,
 				99A2CFED2605E3F200FBBEB7 /* AppDelegate.swift */,
 				99A2CFEF2605E3F200FBBEB7 /* SceneDelegate.swift */,
-				998D53F72701D61B00B35002 /* Objects */,
 				99A2D0042605E4CB00FBBEB7 /* Service */,
 				99A2D0052605E4DE00FBBEB7 /* Entities */,
 				99A2D00C2605FD8100FBBEB7 /* Modules */,

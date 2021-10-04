@@ -29,21 +29,20 @@ class StocksTableViewCell: UITableViewCell {
     
     private var tickerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont(name: "Montserrat-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy  var favoriteButton: UIButton = {
         let button = UIButton()
-        //button.setImage(UIImage(named: "Star"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
@@ -51,14 +50,14 @@ class StocksTableViewCell: UITableViewCell {
     
     private var priceLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont(name: "Montserrat-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private var differenceLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGreen
         return label
@@ -83,6 +82,7 @@ class StocksTableViewCell: UITableViewCell {
     
     func configureUI(with presenter: PopularPresenterProtocol) {
         guard let indexPath = indexPath else { return }
+        
         nameLabel.text = presenter.getName(for: indexPath)
         tickerLabel.text = presenter.getTicker(for: indexPath)
         priceLabel.text = "\(presenter.getPrice(for: indexPath))$"
@@ -93,10 +93,10 @@ class StocksTableViewCell: UITableViewCell {
 
         if presenter.getDayChange(for: indexPath) > 0.0 {
             differenceLabel.text = "$\(presenter.getDayChange(for: indexPath))"
-            differenceLabel.textColor = .systemGreen
+            differenceLabel.textColor = UIColor(red: 86/255, green: 176/255, blue: 102/255, alpha: 1)
         } else {
             differenceLabel.text = "$\(presenter.getDayChange(for: indexPath))"
-            differenceLabel.textColor = .systemRed
+            differenceLabel.textColor = UIColor(red: 163/255, green: 50/255, blue: 44/255, alpha: 1)
         }
         
     }

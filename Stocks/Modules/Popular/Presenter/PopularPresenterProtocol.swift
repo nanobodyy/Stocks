@@ -10,6 +10,7 @@ import UIKit
 protocol PopularPresenterProtocol: class {
     func viewLoad()
     func fillData(with company: Stocks)
+    func didFill()
     var companies: [Stocks] { get set }
     var menuItem: [String] { get }
     

@@ -21,14 +21,14 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         return tableView
     }()
     
+    let indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     let menu = MenuStack()
     
-//    private var menu: UICollectionView = {
-//        let collectionView = PrimaryMenuCollectionView()
-//        collectionView.translatesAutoresizingMaskIntoConstraints = false
-//        collectionView.backgroundColor = .white
-//        return collectionView
-//    }()
     
     private func configureConstraint() {
         view.addSubview(menu)
@@ -43,11 +43,13 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: -8).isActive = true
         stockList.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
+        indicator.center = self.view.center
+        view.addSubview(indicator)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //menu.configure(with: presenter!.menuItem)
         configureConstraint()
         view.backgroundColor = .white
         presenter?.viewLoad()
@@ -57,6 +59,17 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
     func reloadView() {
         DispatchQueue.main.async {
             self.stockList.reloadData()
+            self.indicator.stopAnimating()
+        }
+    }
+    
+    func startActivityIndictor() {
+        indicator.startAnimating()
+    }
+    
+    func stopActivityIndictor() {
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
         }
     }
 }
@@ -83,6 +96,7 @@ extension PopularViewController: UITableViewDataSource {
         cell.delegate = self
         cell.indexPath = indexPath
         cell.configureUI(with: presenter!)
+        cell.selectionStyle = .none
         
         return cell
     }
