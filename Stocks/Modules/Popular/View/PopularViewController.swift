@@ -40,7 +40,7 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         view.addSubview(stockList)
         stockList.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         stockList.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
-        stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: -8).isActive = true
+        stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: 20).isActive = true
         stockList.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         indicator.center = self.view.center
@@ -53,7 +53,9 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         configureConstraint()
         view.backgroundColor = .white
         presenter?.viewLoad()
+        
         menu.configure(with: presenter!.menuItem)
+        menu.delegate = self
     }
     
     func reloadView() {
@@ -119,5 +121,11 @@ extension PopularViewController: UITableViewDelegate {
 extension PopularViewController: TapFavoriteProtocol {
     func didTap(bool: Bool, name: String, indexPath: IndexPath) {
         presenter?.changeFavorite(bool: bool, ticker: name, indexPath: indexPath)
+    }
+}
+
+extension PopularViewController: MenuStackDelegate {
+    func changeMenu(index: Int) {
+        presenter?.changeMenu(index: index)
     }
 }

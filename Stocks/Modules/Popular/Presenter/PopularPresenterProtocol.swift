@@ -9,11 +9,12 @@ import UIKit
 
 protocol PopularPresenterProtocol: class {
     func viewLoad()
-    func fillData(with company: Stocks)
+    func fillCompany(with company: Stocks)
+    func fillFavoriteCompany(with company: Stocks)
     func didFill()
-    var companies: [Stocks] { get set }
+    func sort()
+
     var menuItem: [String] { get }
-    
     func getTicker(for indexPath: IndexPath) -> String
     func getName(for indexPath: IndexPath) -> String
     func getPrice(for indexPath: IndexPath) -> Double
@@ -23,5 +24,6 @@ protocol PopularPresenterProtocol: class {
     func getIsFavorite(for indexPath: IndexPath) -> Bool
     
     func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath)
-    
+    func changeMenu(index: Int)
 }
+

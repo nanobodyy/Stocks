@@ -15,13 +15,10 @@ class PopularIteractor: PopularIteractorProtocol {
     weak var presenter: PopularPresenterProtocol?
     let networkService = CompanyProfileService()
     let dataService = DataService()
-    
-//    var sp500list = ["AAPL","MSFT","AMZN","FB","JPM","JNJ","GOOGL","NFLX","ORCL","C","MA","T","V","CSCO","CVX","UNH","PFE","HD","PG","VZ","C","NVDA"]
-//
+
     func startFetch() {
         
         dataService.fetchData()
-        
         
         for tickerModel in dataService.tickers {
             
@@ -36,12 +33,16 @@ class PopularIteractor: PopularIteractorProtocol {
                 self.networkService.response(url: "https://finnhub.io/api/v1/quote?symbol=\(tick)&token=c1a6egv48v6q19j50nt0") { (quote: Quote?) in
                     stocks.qoute = quote
                     
-                    self.presenter?.fillData(with: stocks)
+                    self.presenter?.fillCompany(with: stocks)
                     
                     if tickerModel == self.dataService.tickers.last {
                         self.presenter?.didFill()
+                        self.presenter?.sort()
                     }
-
+                    
+                    if tickerModel.isFavorite == true {
+                        self.presenter?.fillFavoriteCompany(with: stocks)
+                    }
                 }
             }
         }
