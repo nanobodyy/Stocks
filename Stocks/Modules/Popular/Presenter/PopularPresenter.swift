@@ -78,27 +78,35 @@ class PopularPresenter: PopularPresenterProtocol {
         return logo
     }
     
-    func getIsFavorite(for indexPath: IndexPath) -> Bool {
+    func isFavorite(for indexPath: IndexPath) -> Bool {
         guard  let ticker = currentList[indexPath.section].companyProfile?.ticker else { return false }
         guard let result = iteractor?.checkedFavorite(from: ticker) else { return false }
         
         return result
     }
     
-    func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath) {
+    func changeIsFavorite(bool: Bool, ticker: String) {
         iteractor?.changeEntity(with: ticker, isFavorite: bool)
-        
-        currentList[indexPath.section].isFavorite = bool
-        popularCompanies[indexPath.section].isFavorite = bool
+    }
+    
+    func didTapFavoriteMenuItem() {
+        for i in currentList {
+            guard let ticker = i.companyProfile?.ticker else { return }
+            
+            if iteractor!.checkedFavorite(from: ticker) {
+                favoriteCompanies.append(i)
+            }
+        }
     }
     
     func changeMenu(index: Int) {
         switch index {
         case 0:
+            favoriteCompanies = []
             currentList = popularCompanies
             view?.reloadView()
         case 1:
-            favoriteCompanies = currentList.filter({ $0.isFavorite == true })
+            didTapFavoriteMenuItem()
             currentList = favoriteCompanies
             view?.reloadView()
         default:

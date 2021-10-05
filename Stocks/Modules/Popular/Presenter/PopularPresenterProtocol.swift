@@ -21,9 +21,9 @@ protocol PopularPresenterProtocol: class {
     func getDayChange(for indexPath: IndexPath) -> Double
     func getItemCount() -> Int
     func getImageData(for indexPath: IndexPath) -> String
-    func getIsFavorite(for indexPath: IndexPath) -> Bool
+    func isFavorite(for indexPath: IndexPath) -> Bool
     
-    func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath)
+    func changeIsFavorite(bool: Bool, ticker: String)
     func changeMenu(index: Int)
 }
 

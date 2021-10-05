@@ -118,8 +118,8 @@ extension PopularViewController: UITableViewDelegate {
 }
 
 extension PopularViewController: TapFavoriteProtocol {
-    func didTap(bool: Bool, name: String, indexPath: IndexPath) {
-        presenter?.changeFavorite(bool: bool, ticker: name, indexPath: indexPath)
+    func didTap(bool: Bool, name: String) {
+        presenter?.changeIsFavorite(bool: bool, ticker: name)
     }
 }
 

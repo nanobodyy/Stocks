@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 protocol TapFavoriteProtocol {
-    func didTap(bool: Bool, name: String, indexPath: IndexPath)
+    func didTap(bool: Bool, name: String)
 }
 
 class StocksTableViewCell: UITableViewCell {
@@ -86,8 +86,8 @@ class StocksTableViewCell: UITableViewCell {
         nameLabel.text = presenter.getName(for: indexPath)
         tickerLabel.text = presenter.getTicker(for: indexPath)
         priceLabel.text = "\(presenter.getPrice(for: indexPath))$"
-        buttonSelected(bool: presenter.getIsFavorite(for: indexPath))
-        isFavorite = presenter.getIsFavorite(for: indexPath)
+        buttonSelected(bool: presenter.isFavorite(for: indexPath))
+        isFavorite = presenter.isFavorite(for: indexPath)
         icon.kf.setImage(with: URL(string: presenter.getImageData(for: indexPath)))
         
 
@@ -106,14 +106,12 @@ class StocksTableViewCell: UITableViewCell {
             buttonSelected(bool: !isSelected)
             isSelected = !isSelected
             
-            guard let indexPath = indexPath else { return }
-            delegate?.didTap(bool: false, name: tickerLabel.text!, indexPath: indexPath)
+            delegate?.didTap(bool: false, name: tickerLabel.text!)
         } else {
             buttonSelected(bool: !isSelected)
             isSelected = !isSelected
             
-            guard let indexPath = indexPath else { return }
-            delegate?.didTap(bool: true, name: tickerLabel.text!, indexPath: indexPath)
+            delegate?.didTap(bool: true, name: tickerLabel.text!)
         }
     }
     
