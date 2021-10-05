@@ -30,31 +30,62 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
     let menu = MenuStack()
     let searchBar = UISearchBar()
     
-    private func configureUI() {
-        view.addSubview(menu)
+    private func setupConstraints() {
         menu.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         menu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
         menu.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         menu.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
-        view.addSubview(stockList)
         stockList.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         stockList.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
         stockList.topAnchor.constraint(equalTo: menu.bottomAnchor, constant: 20).isActive = true
         stockList.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         indicator.center = self.view.center
+        
+    }
+    
+    private func confidureUI() {
+        view.addSubview(menu)
+        view.addSubview(stockList)
         view.addSubview(indicator)
+        
+        configureSearchBar()
+        congigureNavigationBar()
+    }
+    
+    private func configureSearchBar() {
+        searchBar.searchBarStyle = .minimal
+        searchBar.searchTextField.layer.cornerRadius = 18
+        searchBar.searchTextField.layer.masksToBounds = true
+        searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchTextField.borderStyle = .none
+        searchBar.searchTextField.layer.borderWidth = 1
+        searchBar.searchTextField.layer.borderColor = UIColor.black.cgColor
+        searchBar.searchTextField.tintColor = .black
+        searchBar.searchTextField.textColor = .black
+        searchBar.tintColor = .black
+        searchBar.setImage(UIImage(named: "closeSearch"), for: .clear, state: .normal)
+        searchBar.searchTextField.font = UIFont(name: "Montserrat-SemiBold", size: 16)
+        navigationItem.titleView = searchBar
+    }
+    
+    private func congigureNavigationBar() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .white
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
         view.backgroundColor = .white
+        
         presenter?.viewLoad()
+        confidureUI()
+        setupConstraints()
         
         menu.configure(with: presenter!.menuItem)
         menu.delegate = self
+        
     }
     
     func reloadView() {
