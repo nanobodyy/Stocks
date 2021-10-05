@@ -13,9 +13,9 @@ class PopularPresenter: PopularPresenterProtocol {
     weak var view: PopularViewControllerProtocol?
     var iteractor: PopularIteractorProtocol?
     
-    var popularCompanies = [Stocks]()
-    var favoriteCompanies = [Stocks]()
     var currentList = [Stocks]()
+    var favoriteCompanies = [Stocks]()
+    var popularCompanies = [Stocks]()
     
     var menuItem = ["Popular", "Favorite"]
     
@@ -24,8 +24,14 @@ class PopularPresenter: PopularPresenterProtocol {
         view?.startActivityIndictor()
     }
     
-    func fillCompany(with company: Stocks) {
-        popularCompanies.append(company)
+    func fillCompany(with company: Stocks, last: Bool) {
+        currentList.append(company)
+        guard last else {
+            sort()
+            didFill()
+            popularCompanies = currentList
+            return
+        }
     }
     
     func fillFavoriteCompany(with company: Stocks) {
@@ -38,58 +44,58 @@ class PopularPresenter: PopularPresenterProtocol {
     }
     
     func sort() {
-        self.popularCompanies = popularCompanies.sorted { (stock1, stock2) -> Bool in
+        self.currentList = currentList.sorted { (stock1, stock2) -> Bool in
             (stock1.companyProfile?.ticker)! < (stock2.companyProfile?.ticker)!
         }
     }
     
     func getTicker(for indexPath: IndexPath) -> String {
-        guard let ticker = popularCompanies[indexPath.section].companyProfile?.ticker else { return "..."}
+        guard let ticker = currentList[indexPath.section].companyProfile?.ticker else { return "..."}
         return ticker
     }
     
     func getName(for indexPath: IndexPath) -> String {
-        guard let name = popularCompanies[indexPath.section].companyProfile?.name else { return "..."}
+        guard let name = currentList[indexPath.section].companyProfile?.name else { return "..."}
         return name
     }
     
     func getPrice(for indexPath: IndexPath) -> Double {
-        guard let price = popularCompanies[indexPath.section].qoute?.c else { return 00 }
+        guard let price = currentList[indexPath.section].qoute?.c else { return 00 }
         return price
     }
     
     func getDayChange(for indexPath: IndexPath) -> Double {
-        guard let dayChange = popularCompanies[indexPath.section].qoute?.d else { return 00 }
+        guard let dayChange = currentList[indexPath.section].qoute?.d else { return 00 }
         return dayChange
     }
     
     func getItemCount() -> Int {
-        return popularCompanies.count
+        return currentList.count
     }
     
     func getImageData(for indexPath: IndexPath) -> String {
-        guard let logo = popularCompanies[indexPath.section].companyProfile?.logo else { return " " }
+        guard let logo = currentList[indexPath.section].companyProfile?.logo else { return " " }
         return logo
     }
     
     func getIsFavorite(for indexPath: IndexPath) -> Bool {
-        return popularCompanies[indexPath.section].isFavorite ?? false
+        return currentList[indexPath.section].isFavorite ?? false
     }
     
     func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath) {
         iteractor?.changeEntity(with: ticker, isFavorite: bool)
         
-        popularCompanies[indexPath.section].isFavorite = bool
+        currentList[indexPath.section].isFavorite = bool
     }
     
     func changeMenu(index: Int) {
         switch index {
         case 0:
-            popularCompanies = currentList
+            currentList = popularCompanies
             view?.reloadView()
         case 1:
-            currentList = popularCompanies
-            popularCompanies = favoriteCompanies
+            favoriteCompanies = currentList.filter({ $0.isFavorite == true })
+            currentList = favoriteCompanies
             view?.reloadView()
         default:
             return

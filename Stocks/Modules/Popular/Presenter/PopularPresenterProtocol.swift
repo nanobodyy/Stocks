@@ -9,7 +9,7 @@ import UIKit
 
 protocol PopularPresenterProtocol: class {
     func viewLoad()
-    func fillCompany(with company: Stocks)
+    func  fillCompany(with company: Stocks, last: Bool)
     func fillFavoriteCompany(with company: Stocks)
     func didFill()
     func sort()
