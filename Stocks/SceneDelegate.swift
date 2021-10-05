@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = popularContainer.fetchViewController()
+        guard let popularVC = popularContainer.fetchViewController() else { return }
+        window?.rootViewController = UINavigationController(rootViewController: popularVC)
         
        
     }

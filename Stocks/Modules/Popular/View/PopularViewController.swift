@@ -28,9 +28,9 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
     }()
     
     let menu = MenuStack()
+    let searchBar = UISearchBar()
     
-    
-    private func configureConstraint() {
+    private func configureUI() {
         view.addSubview(menu)
         menu.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         menu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8).isActive = true
@@ -45,12 +45,11 @@ class PopularViewController: UIViewController, PopularViewControllerProtocol {
         
         indicator.center = self.view.center
         view.addSubview(indicator)
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureConstraint()
+        configureUI()
         view.backgroundColor = .white
         presenter?.viewLoad()
         

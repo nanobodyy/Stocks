@@ -50,7 +50,14 @@ class PopularIteractor: PopularIteractorProtocol {
     }
     
     func changeEntity(with ticker: String, isFavorite: Bool) {
-        dataService.changeEntity(tickerString: ticker, isFavorite: isFavorite)
+        dataService.changeToFavorite(tickerString: ticker, isFavorite: isFavorite)
+    }
+    
+    func checkedFavorite(from ticker: String) -> Bool {
+        var favorite = Bool()
+        favorite = dataService.checkToFavorite(from: ticker)
+        
+        return favorite
     }
 }
 

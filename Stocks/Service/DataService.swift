@@ -44,7 +44,7 @@ class DataService {
         self.fetchData()
     }
     
-    func changeEntity(tickerString: String, isFavorite: Bool) {
+    func changeToFavorite(tickerString: String, isFavorite: Bool) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -61,5 +61,22 @@ class DataService {
         }
         
         self.fetchData()
+    }
+    
+    func checkToFavorite(from ticker: String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "ticker == %@",  ticker)
+        
+        do {
+            if let result = try context.fetch(fetchRequest).first {
+                return result.isFavorite
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return false
     }
 }

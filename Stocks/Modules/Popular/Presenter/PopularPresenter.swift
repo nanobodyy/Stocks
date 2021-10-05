@@ -79,13 +79,17 @@ class PopularPresenter: PopularPresenterProtocol {
     }
     
     func getIsFavorite(for indexPath: IndexPath) -> Bool {
-        return currentList[indexPath.section].isFavorite ?? false
+        guard  let ticker = currentList[indexPath.section].companyProfile?.ticker else { return false }
+        guard let result = iteractor?.checkedFavorite(from: ticker) else { return false }
+        
+        return result
     }
     
     func changeFavorite(bool: Bool, ticker: String, indexPath: IndexPath) {
         iteractor?.changeEntity(with: ticker, isFavorite: bool)
         
         currentList[indexPath.section].isFavorite = bool
+        popularCompanies[indexPath.section].isFavorite = bool
     }
     
     func changeMenu(index: Int) {
