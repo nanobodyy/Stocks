@@ -10,11 +10,25 @@ import CoreData
 
 class DataService {
     
+//    static let shared = DataService()
+//
+//    private init() {}
+    
+    private lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Stocks")
+        container.loadPersistentStores { (_, error) in
+            _ = error.map({ fatalError("Unresolved error \($0)")})
+        }
+        return container
+    }()
+    
+    var context: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
     var tickers: [Entity] = []
     
     func fetchData() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
         
@@ -26,13 +40,10 @@ class DataService {
     }
     
     func addDataBase(ticker: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
+
         let entity = NSEntityDescription.entity(forEntityName: "Entity", in: context)
         let taskObject = NSManagedObject(entity: entity!, insertInto: context) as! Entity
         taskObject.ticker = ticker
-        //taskObject.isFavorite = false
         
         do {
             try context.save()
@@ -45,8 +56,6 @@ class DataService {
     }
     
     func changeToFavorite(tickerString: String, isFavorite: Bool) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "ticker == %@",  tickerString)
@@ -64,8 +73,6 @@ class DataService {
     }
     
     func checkToFavorite(from ticker: String) -> Bool {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "ticker == %@",  ticker)
